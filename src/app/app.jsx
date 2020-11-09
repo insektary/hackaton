@@ -1,8 +1,13 @@
 import React, {Fragment, Component} from 'react';
+import {connect} from 'react-redux';
+import {incrementCounter} from './store/actions';
 
-export class App extends Component {
+@connect(null, {increment: incrementCounter})
+class App extends Component {
     handler = () => {
-        console.log('Иди в жопу');
+        const {increment} = this.props;
+
+        increment();
     }
 
     render() {
@@ -14,3 +19,5 @@ export class App extends Component {
         );
     }
 }
+
+export {App};
