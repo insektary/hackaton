@@ -1,16 +1,22 @@
-import React, {Fragment, Component} from 'react';
+// @flow
+
+import React, {Fragment, Component, type Node} from 'react';
 import {connect} from 'react-redux';
 import {incrementCounter} from './store/actions';
 
+type AppPropsType = {
+    increment: () => void
+}
+
 @connect(null, {increment: incrementCounter})
-class App extends Component {
-    handler = () => {
+class App extends Component<AppPropsType> {
+    handler: Function = () => {
         const {increment} = this.props;
 
         increment();
     }
 
-    render() {
+    render(): Node {
         return (
             <Fragment>
                 <div>ХУЙ</div>
