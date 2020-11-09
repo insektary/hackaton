@@ -3,6 +3,7 @@
 import React, {Fragment, Component, type Node} from 'react';
 import {connect} from 'react-redux';
 import {request} from './api/requests';
+import {TestForm} from './forms';
 import {incrementCounter} from './store/actions';
 
 type AppPropsType = {
@@ -27,6 +28,7 @@ class App extends Component<AppPropsType> {
             <Fragment>
                 <div>ХУЙ</div>
                 <button type="button" onClick={this.handler}>Нажми</button>
+                <TestForm />
             </Fragment>
         );
     }
