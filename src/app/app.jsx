@@ -2,6 +2,7 @@
 
 import React, {Fragment, Component, type Node} from 'react';
 import {connect} from 'react-redux';
+import {request} from './api/requests';
 import {incrementCounter} from './store/actions';
 
 type AppPropsType = {
@@ -10,6 +11,11 @@ type AppPropsType = {
 
 @connect(null, {increment: incrementCounter})
 class App extends Component<AppPropsType> {
+    componentDidMount() {
+        request('myUrl').get()
+            .then((res) => console.log(res));
+    }
+
     handler: Function = () => {
         const {increment} = this.props;
 

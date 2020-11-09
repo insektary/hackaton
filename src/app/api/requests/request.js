@@ -10,7 +10,7 @@ import type {JsFiddleType, RequestsObjectType} from '../flow-types';
 
 export const request = (url: string): RequestsObjectType => {
     // eslint-disable-next-line no-undef
-    const doFetch = (method: string, data: JsFiddleType) => fetch(url, {
+    const doFetch = (method: string, data?: JsFiddleType) => fetch(url, {
         method,
         headers: {
             'Content-Type': 'application/json'
