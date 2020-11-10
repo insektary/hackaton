@@ -23,6 +23,7 @@ export const createField = (Component: ComponentType): Function => {
                     onChange
                 },
                 meta,
+                children,
                 ...restProps
             } = this.props;
 
@@ -32,7 +33,9 @@ export const createField = (Component: ComponentType): Function => {
                     id={name}
                     onChange={onChange}
                     value={value}
-                />
+                >
+                    {children}
+                </Component>
             );
         }
     }
