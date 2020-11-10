@@ -1,1 +1,1 @@
-export {counterReducer} from './counter-reducer';
+export {requestReducer} from './requests-reducer';

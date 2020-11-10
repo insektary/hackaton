@@ -1,1 +1,1 @@
-export {incrementCounter, decrementCounter} from './counter';
+export {startRequest, stopRequest} from './requests';

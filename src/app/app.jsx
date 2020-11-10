@@ -4,24 +4,24 @@ import React, {Fragment, Component, type Node} from 'react';
 import {connect} from 'react-redux';
 import {request} from './api/requests';
 import {TestForm} from './forms';
-import {incrementCounter} from './store/actions';
+import type {RequestsObjectType} from './api/flow-types';
 import './scss/main.scss';
 
 type AppPropsType = {
-    increment: () => void
+    actionRequest: (url: string) => RequestsObjectType
 }
 
-@connect(null, {increment: incrementCounter})
+@connect(null, {actionRequest: request})
 class App extends Component<AppPropsType> {
     componentDidMount() {
-        request('myUrl').get()
+        const {actionRequest} = this.props;
+
+        actionRequest('myUrl').get()
             .then((res) => console.log(res));
     }
 
     handler: Function = () => {
-        const {increment} = this.props;
 
-        increment();
     }
 
     render(): Node {
