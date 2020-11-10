@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 import {request} from './api/requests';
 import {TestForm} from './forms';
 import {incrementCounter} from './store/actions';
+import './scss/main.scss';
 
 type AppPropsType = {
     increment: () => void
