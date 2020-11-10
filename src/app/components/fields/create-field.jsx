@@ -13,7 +13,7 @@ type PropsType = {
     meta: Object
 }
 
-export const createField = (Component: ComponentType): function => {
+export const createField = (Component: ComponentType): Function => {
     class Field extends PureComponent<PropsType> {
         render(): Node {
             const {
