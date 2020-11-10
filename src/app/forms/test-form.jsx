@@ -11,6 +11,7 @@ class TestForm extends PureComponent<*> {
             <Fragment>
                 <Fields.Input name="field" />
                 <Fields.DatePicker name="field2" />
+                <Fields.Radio name="field3" />
             </Fragment>
         );
     }
