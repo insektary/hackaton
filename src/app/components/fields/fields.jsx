@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Field} from 'redux-form';
-import {Input} from '@material-ui/core';
+import {Input, TextField} from '@material-ui/core';
 import {createField} from './create-field';
 
 type PropsType = {
@@ -10,7 +10,11 @@ type PropsType = {
 }
 
 const BindedInput = createField(Input);
+const BindedDatePicker = createField(TextField);
 
 export const Fields = {
-    Input: ({name}: PropsType) => <Field name={name} component={BindedInput} />
+    Input: ({name, ...props}: PropsType) => (
+        <Field name={name} component={BindedInput} props={props} />),
+    DatePicker: ({name, ...props}: PropsType) => (
+        <Field name={name} component={BindedDatePicker} props={{...props, type: 'date'}} />)
 };
