@@ -9,10 +9,11 @@ type PropsType = {
         value: mixed,
         name: string,
         onChange: (value: mixed) => void
-    }
+    },
+    meta: Object
 }
 
-export const createField = (Component: ComponentType) => {
+export const createField = (Component: ComponentType): function => {
     class Field extends PureComponent<PropsType> {
         render(): Node {
             const {
