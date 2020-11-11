@@ -1,12 +1,12 @@
 // @flow
 
+import {startRequest, stopRequest} from 'store/actions';
 import {
     GET,
     POST,
     PUT,
     DELETE
 } from './methods';
-import {startRequest, stopRequest} from '../../store/actions';
 import type {JsFiddleType, RequestsObjectType} from '../flow-types';
 
 export const request = (url: string): RequestsObjectType => (dispatch: Function) => {

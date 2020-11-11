@@ -2,9 +2,9 @@
 
 import React, {Fragment, Component, type Node} from 'react';
 import {connect} from 'react-redux';
-import {request} from './api/requests';
-import {TestForm} from './forms';
-import type {RequestsObjectType} from './api/flow-types';
+import {request} from 'api/requests';
+import {TestForm} from 'forms';
+import type {RequestsObjectType} from 'api/flow-types';
 import './scss/main.scss';
 
 type AppPropsType = {

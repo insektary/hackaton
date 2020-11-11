@@ -27,7 +27,15 @@
         "comma-dangle": ["error", "never"],
         "indent": ["error", 4],
         "react/prop-types": 0,
-        "react/jsx-props-no-spreading": 0
+        "react/jsx-props-no-spreading": 0,
+        "implicit-arrow-linebreak": 0
     },
-    "parser": "babel-eslint"
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "moduleDirectory": ["node_modules", "src/app"]
+            }
+        }
+    }
 }
