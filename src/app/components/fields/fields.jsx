@@ -28,7 +28,6 @@ const BindedRadio = createField(Radio);
 const BindedCheckbox = createField(Checkbox);
 const BindedSelect = createField(Select);
 const BindedSwitch = createField(Switch);
-// const BindedOption = createField(MenuItem);
 
 export const Fields = {
     Input: ({name, ...props}: PropsType): Object => (
@@ -47,17 +46,12 @@ export const Fields = {
             component={BindedSelect}
             props={{
                 ...props,
-                children: items.map(({id, name}) => (
-                    <MenuItem value={id} key={id}>{name}</MenuItem>
-                ))
+                children: items && items.length ? items.map((item) => (
+                    <MenuItem value={item.id} key={item.id}>{item.name}</MenuItem>
+                )) : <MenuItem disabled>нет данных</MenuItem>
             }}
         />
     ),
     Switch: ({name, ...props}: PropsType): Object => (
         <Field name={name} component={BindedSwitch} props={{...props, color: 'primary'}} />)
-    // Option: ({name, ...props}: PropsType): Object => (
-    //     <Field name={name} component={BindedOption} props={props}>
-    //         {props.label}
-    //     </Field>
-    // )
 };

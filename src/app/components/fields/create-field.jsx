@@ -10,7 +10,8 @@ type PropsType = {
         name: string,
         onChange: (value: mixed) => void
     },
-    meta: Object
+    meta: Object,
+    children?: Array<Object>
 }
 
 export const createField = (Component: ComponentType): Function => {
