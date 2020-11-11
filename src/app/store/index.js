@@ -1,14 +1,23 @@
-import {createStore, combineReducers} from 'redux';
+import {
+    createStore,
+    combineReducers,
+    applyMiddleware,
+    compose
+} from 'redux';
 import {reducer as formReducer} from 'redux-form';
-import {counterReducer} from './reducers';
+import thunk from 'redux-thunk';
+import {requestReducer} from './reducers';
 
 const rootReducer = combineReducers({
     form: formReducer,
-    counter: counterReducer
+    requests: requestReducer
 });
 
 export const store = createStore(
     rootReducer,
-    // eslint-disable-next-line
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    compose(
+        applyMiddleware(thunk),
+        // eslint-disable-next-line
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
 );

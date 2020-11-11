@@ -4,7 +4,8 @@ import React from 'react';
 import {Field} from 'redux-form';
 import {
     Input,
-    TextField, Radio,
+    TextField,
+    Radio,
     Checkbox,
     Select,
     Switch,
