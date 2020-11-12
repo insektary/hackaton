@@ -47,8 +47,8 @@ export const Fields = {
             component={BindedSelect}
             props={{
                 ...props,
-                children: items && items.length ? items.map((item) => (
-                    <MenuItem value={item.id} key={item.id}>{item.name}</MenuItem>
+                children: items && items.length ? items.map(({id, name: option}) => (
+                    <MenuItem value={id} key={id}>{option}</MenuItem>
                 )) : <MenuItem disabled>нет данных</MenuItem>
             }}
         />
