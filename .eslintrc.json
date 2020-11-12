@@ -28,6 +28,7 @@
         "indent": ["error", 4],
         "react/prop-types": 0,
         "react/jsx-props-no-spreading": 0,
+        "react/require-default-props": 0,
         "implicit-arrow-linebreak": 0
     },
     "parser": "babel-eslint",
